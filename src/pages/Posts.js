@@ -1,10 +1,13 @@
 import React, { Component } from 'react';
 import axios from 'axios';
-class Posts extends Component {
-    state = { 
-        posts: []
-     }
+import "./Posts.css";
+import {Link} from "react-router-dom";
 
+class Posts extends Component {
+    state = {
+        posts: [] 
+     }
+    
     componentDidMount() {
         axios.get('https://jsonplaceholder.typicode.com/posts')
         .then(res => {
@@ -17,20 +20,19 @@ class Posts extends Component {
     render() { 
         let postsList = this.state.posts
         .map(post => {
-          return <article className="post">
-              <h2>{post.title}</h2>
+          return <article className="post column is-one-third">
+              <Link to="/posts/3"><h2 className="post__title">{post.title}</h2></Link>
               <p>{post.body}</p>
           </article>
         })
-        
-        return (
-        <div className="posts">
-            <h1>Les articles</h1>
-            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Est beatae porro, in unde iure dignissimos veritatis aliquam incidunt voluptatibus harum.</p>
-            
-            {postsList}
-        </div> 
-        );
+
+        return ( 
+        <div className="posts container">
+            <h1 className="title is-1">Mes articles</h1>
+            <div className="columns is-multiline">
+              {postsList}
+            </div>
+        </div> );
     }
 }
  

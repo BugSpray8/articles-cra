@@ -1,0 +1,9 @@
+.post {
+    padding: 5px;
+}
+
+.post__title {
+    font-size: 1.75rem;
+    line-height:1;
+    margin-bottom: 1rem;
+}

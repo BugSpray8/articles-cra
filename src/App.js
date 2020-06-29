@@ -1,12 +1,17 @@
 import React, { Component } from 'react';
 import './App.css';
 
-import { BrowserRouter as Router, Route, Link} from "react-router-dom";
+import { BrowserRouter as Router, Route} from "react-router-dom";
 
+// Pages
 import Home from "./pages/Home";
 import Services from "./pages/Services";
 import Contact from "./pages/Contact";
 import Posts from "./pages/Posts";
+import Post from "./pages/Post";
+
+// Components
+import Navbar from "./components/Navbar";
 
 
 
@@ -19,17 +24,16 @@ class App extends Component {
     return (
       <Router>
         <div className="App">
-          <ul>
-            <li><Link to="/">Accueil</Link></li>
-            <li><Link to="/posts">Mes articles</Link></li>
-            <li><Link to="/services">Mes services</Link></li>
-            <li><Link to="/contact">Contact</Link></li>
-          </ul>
+          <Navbar/>
         </div>
   
         <Route exact path="/" component={Home} />
-        <Route path="/posts" component={Posts} />
+
+        <Route exact path="/posts" component={Posts} />
+        <Route path="/posts/:id" component={Post} />
+
         <Route path="/services" component={Services} />
+        
         <Route path="/contact" component={Contact} />
       </Router>
     );

@@ -9,10 +9,6 @@ import Contact from "./pages/Contact";
 import Posts from "./pages/Posts";
 
 
-// Page d'accueil avec 5 articles (/)
-// Page des articles avec TOUS les articles (/posts)
-// Page de contact avec un petit formulaire
-// Stylisez ça avec Bulma
 
 
 class App extends Component {

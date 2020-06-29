@@ -4,7 +4,7 @@ class Contact extends Component {
     state = {  }
     render() { 
         return ( 
-        <div className="Contact">
+        <div className="contact">
             <h1>Contactez-moi</h1> 
             <form>
                 <label htmlFor="name">Nom</label>

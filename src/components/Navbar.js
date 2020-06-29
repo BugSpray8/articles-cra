@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import {NavLink} from "react-router-dom";
 import "./Navbar.css";
 
+
 class Navbar extends Component {
     state = {  }
     render() { 
@@ -26,7 +27,7 @@ class Navbar extends Component {
       </NavLink>
 
       <NavLink to="/services" className="navbar-item" activeClassName="is-active">
-        Mes services
+        Galerie
       </NavLink>
 
       <NavLink to="/posts" className="navbar-item" activeClassName="is-active">

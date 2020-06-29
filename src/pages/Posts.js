@@ -20,8 +20,9 @@ class Posts extends Component {
     render() { 
         let postsList = this.state.posts
         .map(post => {
-          return <article className="post column is-one-third">
-              <Link to="/posts/3"><h2 className="post__title">{post.title}</h2></Link>
+          let url = "/posts/" + post.id;
+          return <article key={post.id} className="post column is-one-third">
+              <Link to={url}><h2 className="post__title">{post.title}</h2></Link>
               <p>{post.body}</p>
           </article>
         })
@@ -30,7 +31,7 @@ class Posts extends Component {
         <div className="posts container">
             <h1 className="title is-1">Mes articles</h1>
             <div className="columns is-multiline">
-              {postsList}
+              {postsList.length > 0 ? postsList: "En chargement..."}
             </div>
         </div> );
     }
